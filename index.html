@@ -6,18 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- подключение css -->
   <link rel="stylesheet" href="./css/style.css">
-  <!-- подключение js  -->
+  <!-- подключение js и icon -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	<script src="./js/main.js" defer></script>
 
-  <title>Menu-js</title>
+  <title>Dots Menu </title>
 </head>
 <body>
-  <div class="burger-menu">
-    <div class="menu">
-      <span class="line one"></span>
-      <span class="line two"></span>
-      <span class="line three"></span>
-    </div>
+
+  <div class="navigation">
+    <span style="--i:0;--x:-1;--y:0"> <ion-icon style="--clr:#24ffe5"  name="leaf-outline"></ion-icon></span>
+    <span style="--i:1;--x:1;--y:0">  <ion-icon style="--clr:#24f0ff"  name="bluetooth-outline"></ion-icon></span>
+    <span style="--i:2;--x:0;--y:-1"> <ion-icon style="--clr:#fc4c00"  name="chatbubble-ellipses-outline"></ion-icon></span>
+    <span style="--i:3;--x:0;--y:1">  <ion-icon style="--clr:#ffae0d"  name="home-outline"></ion-icon></span>
+    <span style="--i:4;--x:1;--y:1">  <ion-icon style="--clr:#ed29ff"  name="headset-outline"></ion-icon></span>
+    <span style="--i:5;--x:-1;--y:-1"><ion-icon style="--clr:#ff2977"  name="heart-outline"></ion-icon></span>
+    <span style="--i:6;--x:0;--y:0">  <ion-icon style="--clr:#2dfc52"  name="finger-print-outline"></ion-icon></span>
+    <span style="--i:7;--x:-1;--y:1"><ion-icon  style="--clr:#9c8ae3"  name="paper-plane-outline"></ion-icon></span>
+    <span style="--i:8;--x:1;--y:-1"> <ion-icon style="--clr:#248aff"  name="cloudy-night-outline"></ion-icon></span>
   </div>
+  
 </body>
 </html>

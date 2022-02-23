@@ -1,5 +1,5 @@
-const burgerMenu = document.querySelector('.burger-menu')
+let navigation = document.querySelector('.navigation');
 
-burgerMenu.addEventListener('click', () => {
-  burgerMenu.classList.toggle('active')
-})
+navigation.onclick = function(){
+  navigation.classList.toggle('active')
+}
