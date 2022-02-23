@@ -1,92 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body{
-  height: 100vh;
-  background-color: #e3f2fd;
-}
-
-.burger-menu{
-  position: absolute;
-  /* выравнивание по центру */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* размер дива */
-  height: 80px;
-  width: 90px;
-  /* цвет, скругление углов и тень */
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-  /* flex и выравнивание внутри дива */
   display: flex;
   justify-content: center;
-  /* курсор */
-  cursor: pointer;
-  /* время анимации */
-  transition: all 0.4s linear;
-  overflow: hidden;
-}
-
-.burger-menu.active{
-  background-color: #de0611;
-}
-
-/* основное поле бургера */
-.burger-menu .menu{
-  position: relative;
-  height: 100%;
-  width: 65px;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+  background: #252839;
 }
 
-/* линии меню привязаны к .menu через position */
-.menu .line{
+ul{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+ul li{
+  position: relative;
+  list-style: none;
+}
+
+ul li a{
+  position: relative;
+  font-size: 4em;
+  text-decoration: none;
+  line-height: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+
+ul li a::before{
+  content: attr(data-text);
   position: absolute;
-  height: 8px;
+  color: var(--clr);
+  width: 0;
+  overflow: hidden;
+  transition: 1s;
+  border-right: 8px solid var(--clr);
+  -webkit-text-stroke: 1px  var(--clr);
+}
+
+ul li a:hover::before{
   width: 100%;
-  border-radius: 6px;
-  background-color: #2c3e50;
-  /* время анимации */
-  transition: all 0.4s linear;
-}
-
-/* первая линия */
-.menu .line.one {
-  top: 15px;
-}
-/* первая линия в активном состоянии */
-.burger-menu.active .line.one{
-  top: 45%;
-  transform: rotate(50deg);
-  background-color: #fff;
-}
-
-/* втрая линия */
-.menu .line.two {
-  left: 0;
-  opacity: 1;
-}
-/* вторая линия в активном состоянии */
-.burger-menu.active .line.two{
-  left: -100%;
-  opacity: 0;
-  background-color: #de0611;
-}
-
-/* третья линия */
-.menu .line.three {
-  bottom: 15px;
-}
-/* третья линия в активном состоянии */
-.burger-menu.active .line.three{
-  bottom: 45%;
-  transform: rotate(-50deg);
-  background-color: #fff;
+  filter: drop-shadow(0 0 25px var(--clr));
 }
