@@ -4,20 +4,131 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- подключение css -->
+
+  <!-- =============== CSS =============== -->
   <link rel="stylesheet" href="./css/style.css">
-  <!-- подключение js  -->
+
+  <!-- =========== Boxicons CSS =========== -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- ================ JS ================ -->
 	<script src="./js/main.js" defer></script>
 
-  <title>Menu-js</title>
+  <title>Sidebar-Menu</title>
 </head>
 <body>
-  <div class="burger-menu">
-    <div class="menu">
-      <span class="line one"></span>
-      <span class="line two"></span>
-      <span class="line three"></span>
+
+  <nav class="sidebar close">
+    
+    <header>
+      <!-- логотип и текст -->
+      <div class="image-text">
+        <!-- логотип -->
+        <span class="image">
+          <img src="img/logo.jpg" alt="logo">
+        </span>
+        <!-- Текст компании -->
+        <div class="text header-text">
+          <span class="name">CodingLab</span>
+          <span class="profession">Web developer</span>
+        </div>
+      </div>
+      <!-- кнопка со стрелкой -->
+      <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+
+    <div class="menu-bar">
+
+      <div class="menu">
+        <!-- поиск -->
+        <li class="search-box">
+            <i class='bx bx-search icon' ></i>
+            <input type="search" placeholder="Search...">
+        </li>
+        
+        <!-- 1 -->
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="#">
+              <i class='bx bx-home icon' ></i>
+              <span class="text nav-text">Dashboard</span>
+            </a>
+          </li>
+        </ul>
+        <!-- 2 -->
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="#">
+              <i class='bx bx-bar-chart-alt-2 icon' ></i>
+              <span class="text nav-text">Revenue</span>
+            </a>
+          </li>
+        </ul>
+        <!-- 3 -->
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="#">
+              <i class='bx bx-bell icon' ></i>
+              <span class="text nav-text">Notifications</span>
+            </a>
+          </li>
+        </ul>
+        <!-- 4 -->
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="#">
+              <i class='bx bx-pie-chart-alt icon' ></i>
+              <span class="text nav-text">Analytics</span>
+            </a>
+          </li>
+        </ul>
+        <!-- 5 -->
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="#">
+              <i class='bx bx-heart icon' ></i>
+              <span class="text nav-text">Likes</span>
+            </a>
+          </li>
+        </ul>
+        <!-- 6 -->
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="#">
+              <i class='bx bx-wallet icon' ></i>
+              <span class="text nav-text">Wallets</span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="bottom-content">
+
+        <li class="li">
+          <a href="#">
+            <i class='bx bx-log-out icon' ></i>
+            <span class="text nav-text">Logout</span>
+          </a>
+        </li>
+
+        <li class="mode">
+          <div class="moon-sun">
+            <i class='bx bx-moon icon moon' ></i>
+            <i class='bx bx-sun icon sun' ></i>
+          </div>
+          <span class="mode-text text">Dark Mode</span>
+
+          <div class="toggle-switch">
+            <span class="switch"></span>
+          </div>
+          
+        </li>
+
+      </div>
     </div>
-  </div>
+  </nav>
+
 </body>
 </html>
