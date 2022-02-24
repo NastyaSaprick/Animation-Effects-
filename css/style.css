@@ -5,88 +5,77 @@
 }
 
 body{
-  height: 100vh;
-  background-color: #e3f2fd;
-}
-
-.burger-menu{
-  position: absolute;
-  /* выравнивание по центру */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* размер дива */
-  height: 80px;
-  width: 90px;
-  /* цвет, скругление углов и тень */
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-  /* flex и выравнивание внутри дива */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  /* курсор */
-  cursor: pointer;
-  /* время анимации */
-  transition: all 0.4s linear;
-  overflow: hidden;
-}
-
-.burger-menu.active{
-  background-color: #de0611;
-}
-
-/* основное поле бургера */
-.burger-menu .menu{
-  position: relative;
-  height: 100%;
-  width: 65px;
-  display: flex;
   align-items: center;
+  background: radial-gradient(#555, #292929);
+}
+
+label{
+  position: relative;
+  width: 300px;
+  height: 150px;
+  background: #3e3e3e;
+  box-shadow: 0 0 0 4px #303030;
+  border-radius: 75px;
+  cursor: pointer;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-/* линии меню привязаны к .menu через position */
-.menu .line{
+label input{
+  appearance: none;
+}
+
+label span{
   position: absolute;
-  height: 8px;
-  width: 100%;
-  border-radius: 6px;
-  background-color: #2c3e50;
-  /* время анимации */
-  transition: all 0.4s linear;
-}
-
-/* первая линия */
-.menu .line.one {
-  top: 15px;
-}
-/* первая линия в активном состоянии */
-.burger-menu.active .line.one{
-  top: 45%;
-  transform: rotate(50deg);
-  background-color: #fff;
-}
-
-/* втрая линия */
-.menu .line.two {
   left: 0;
-  opacity: 1;
-}
-/* вторая линия в активном состоянии */
-.burger-menu.active .line.two{
-  left: -100%;
-  opacity: 0;
-  background-color: #de0611;
+  width: 175px;
+  height: 150px;
+  background: url(../img/Coffee_01.png);
+  background-size: auto 150px;
+  background-repeat: no-repeat;
+  transition: 1.5s;
+  transform: rotate(-180deg);
+  transform-origin: 75px;
 }
 
-/* третья линия */
-.menu .line.three {
-  bottom: 15px;
+label input:checked ~ span{
+  left: 150px;
+  background: url(../img/Coffee_02.png);
+  background-size: auto 150px;
+  background-repeat: no-repeat;
+  transform: rotate(360deg);
 }
-/* третья линия в активном состоянии */
-.burger-menu.active .line.three{
-  bottom: 45%;
-  transform: rotate(-50deg);
-  background-color: #fff;
+
+label text{
+  position: absolute;
+  left: -120px;
+  font-family: consolas;
+  color: #fff;
+  font-size: 3em;
+  filter: drop-shadow(0 0 15px #fff)
+          drop-shadow(0 0 35px #fff);
+  transition: 1.5s;
+}
+
+label input:checked ~ text{
+  color: #8f8f8f;
+  filter: none;
+}
+
+label text:last-child{
+  position: absolute;
+  right: -100px;
+  left: initial;
+  color: #8f8f8f;
+  filter: none;
+}
+
+label input:checked ~ text:last-child{
+  color: #fff;
+  filter: drop-shadow(0 0 15px #fff)
+          drop-shadow(0 0 35px #fff);
 }
