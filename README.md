@@ -8,3 +8,4 @@
 5. Glowing social icon - https://nastyasaprick.github.io/Animation-Effects-/  (hover эффект на CSS для соц-кнопок)
 6. Checkbox - https://nastyasaprick.github.io/Animation-Effects-/ (анимированный сheckbox через CSS)
 7. BtnTooltip - https://nastyasaprick.github.io/Animation-Effects-/ (hover-подсказки для соц-кнопок)
+8. Card Design - https://nastyasaprick.github.io/Animation-Effects-/ (нестандартный дизайн карточек)
