@@ -1,92 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body{
-  height: 100vh;
-  background-color: #e3f2fd;
-}
-
-.burger-menu{
-  position: absolute;
-  /* выравнивание по центру */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* размер дива */
-  height: 80px;
-  width: 90px;
-  /* цвет, скругление углов и тень */
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-  /* flex и выравнивание внутри дива */
   display: flex;
   justify-content: center;
-  /* курсор */
-  cursor: pointer;
-  /* время анимации */
-  transition: all 0.4s linear;
-  overflow: hidden;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #3c2846;
 }
 
-.burger-menu.active{
-  background-color: #de0611;
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px;
 }
 
-/* основное поле бургера */
-.burger-menu .menu{
+.card{
   position: relative;
-  height: 100%;
-  width: 65px;
+  width: 320px;
+  height: 450px;
+  margin: 30px;
+  background: #287bff;
+  border-radius: 20px;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  box-shadow: 0 15px 0 #fff,
+              inset 0 -15px  0 rgba(255, 255, 255, 0.25),
+              0 45px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card::before{
+  content: '';
+  position: absolute;
+  top: -140px;
+  left: -40%;
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+  transform: rotate(35deg);
+  pointer-events: none;
+  filter: blur(5px);
+}
+
+.card:nth-child(1){
+  background: linear-gradient(to bottom, #ff2ae0, #645bf6);
+}
+.card:nth-child(2){
+  background: linear-gradient(to bottom, #ffec61, #f321d7);
+}
+.card:nth-child(3){
+  background: linear-gradient(to bottom, #24ff72, #9a4eff);
+}
+
+.icon{
+  position: relative;
+  width: 140px;
+  height: 120px;
+  background: #3c2846;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1),
+              inset 0 -8px  0 #fff;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* линии меню привязаны к .menu через position */
-.menu .line{
+.icon::before{
+  content: '';
   position: absolute;
-  height: 8px;
+  top: 0;
+  left: -50px;
+  width: 50px;
+  height: 50px;
+  background: transition;
+  border-top-right-radius: 50px;
+  box-shadow: 15px -15px 0 15px #3c2846;
+}
+
+.icon::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50px;
+  width: 50px;
+  height: 50px;
+  background: transition;
+  border-top-left-radius: 50px;
+  box-shadow: -15px -15px 0 15px #3c2846;
+}
+
+.icon ion-icon{
+  color: #fff;
+  position: relative;
+  font-size: 6em;
+  z-index: 10000;
+  --ionicon-stroke-width: 16px;
+}
+
+.content{
+  position: absolute;
   width: 100%;
-  border-radius: 6px;
-  background-color: #2c3e50;
-  /* время анимации */
-  transition: all 0.4s linear;
+  padding: 30px;
+  padding-top: 140px;
+  text-align: center;
 }
 
-/* первая линия */
-.menu .line.one {
-  top: 15px;
-}
-/* первая линия в активном состоянии */
-.burger-menu.active .line.one{
-  top: 45%;
-  transform: rotate(50deg);
-  background-color: #fff;
+.content h2{
+  font-size: 1.75em;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
-/* втрая линия */
-.menu .line.two {
-  left: 0;
-  opacity: 1;
-}
-/* вторая линия в активном состоянии */
-.burger-menu.active .line.two{
-  left: -100%;
-  opacity: 0;
-  background-color: #de0611;
-}
-
-/* третья линия */
-.menu .line.three {
-  bottom: 15px;
-}
-/* третья линия в активном состоянии */
-.burger-menu.active .line.three{
-  bottom: 45%;
-  transform: rotate(-50deg);
-  background-color: #fff;
+.content p{
+  color: #fff;
+  line-height: 1.5em;
 }
