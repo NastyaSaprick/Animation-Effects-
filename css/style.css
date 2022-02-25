@@ -1,92 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body{
-  height: 100vh;
-  background-color: #e3f2fd;
-}
-
-.burger-menu{
-  position: absolute;
-  /* выравнивание по центру */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* размер дива */
-  height: 80px;
-  width: 90px;
-  /* цвет, скругление углов и тень */
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-  /* flex и выравнивание внутри дива */
   display: flex;
   justify-content: center;
-  /* курсор */
-  cursor: pointer;
-  /* время анимации */
-  transition: all 0.4s linear;
-  overflow: hidden;
-}
-
-.burger-menu.active{
-  background-color: #de0611;
-}
-
-/* основное поле бургера */
-.burger-menu .menu{
-  position: relative;
-  height: 100%;
-  width: 65px;
-  display: flex;
   align-items: center;
+  min-height: 100vh;
+  background: #333;
+}
+
+.navigation{
+  position: relative;
+  width: 350px;
+  height: 70px;
+}
+
+.navigation ul{
+  display: flex;
+}
+
+.navigation ul li{
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.navigation ul li a{
+  position: relative;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
 }
 
-/* линии меню привязаны к .menu через position */
-.menu .line{
+.navigation ul li a .icon{
+  position: relative;
+  line-height: 75px;
+  transition: 0.5s;
+  font-size: 35px;
+}
+
+.navigation ul li.active a .icon{
+  font-size: 25px;
+  transform: translateY(-6px);
+}
+
+.navigation ul li a .text{
   position: absolute;
-  height: 8px;
-  width: 100%;
-  border-radius: 6px;
-  background-color: #2c3e50;
-  /* время анимации */
-  transition: all 0.4s linear;
-}
-
-/* первая линия */
-.menu .line.one {
-  top: 15px;
-}
-/* первая линия в активном состоянии */
-.burger-menu.active .line.one{
-  top: 45%;
-  transform: rotate(50deg);
-  background-color: #fff;
-}
-
-/* втрая линия */
-.menu .line.two {
-  left: 0;
-  opacity: 1;
-}
-/* вторая линия в активном состоянии */
-.burger-menu.active .line.two{
-  left: -100%;
-  opacity: 0;
-  background-color: #de0611;
-}
-
-/* третья линия */
-.menu .line.three {
+  font-size: 14px;
+  color: #fff;
   bottom: 15px;
+  font-weight: 400;
+  transition: 0.25s;
+  text-transform: uppercase;
+  transform: scale(0);
 }
-/* третья линия в активном состоянии */
-.burger-menu.active .line.three{
-  bottom: 45%;
-  transform: rotate(-50deg);
-  background-color: #fff;
+
+.navigation ul li.active a .text{
+  transform: scale(1);
+}
+
+.indicator{
+  position: absolute;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator{
+  background: #f53b57;
+  box-shadow: 0 15px 25px #f53b5799;
+  transform: translateX(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator{
+  background: #3b7cf5;
+  box-shadow: 0 15px 25px #3b7cf599;
+  transform: translateX(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator{
+  background: #4bf53b;
+  box-shadow: 0 15px 25px #4bf53b99;
+  transform: translateX(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator{
+  background: #f5d93b;
+  box-shadow: 0 15px 25px #f5d93b99;
+  transform: translateX(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator{
+  background: #f53bd6;
+  box-shadow: 0 15px 25px #f53bd699;
+  transform: translateX(calc(70px * 4));
 }

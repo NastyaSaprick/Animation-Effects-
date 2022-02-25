@@ -1,5 +1,11 @@
-const burgerMenu = document.querySelector('.burger-menu')
+let list = document.querySelectorAll('.list')
 
-burgerMenu.addEventListener('click', () => {
-  burgerMenu.classList.toggle('active')
-})
+function setActiveClass() {
+  list.forEach((item) => item.classList.remove('active'))
+
+                          this.classList.add('active')
+}
+
+list.forEach((item) => 
+    item.addEventListener('mouseover' , setActiveClass)
+  )
